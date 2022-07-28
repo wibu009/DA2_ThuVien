@@ -1,0 +1,79 @@
+﻿<head>
+    @{
+        ViewData["Title"] = "Index";
+        Layout = "~/Areas/PageReview/Views/Shared/_LayoutReView.cshtml";
+    }
+    <div class="col-md-3">
+        <h3>Thành viên </h3>
+        <ul class="list-unstyled footer-link">
+            <li class="d-block">Bùi Cảnh Long </li>
+
+        </ul>
+    </div>
+</head>
+
+
+<body>
+    <section class="home-slider owl-carousel">
+        <div id="myCarousel" class="carousel slide border" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="/img/meo.jpg" alt="Logo">
+                </div>
+            </div>
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+</body>
+<!-- END slider -->
+<section class="section bg-light">
+    <img class="d-block" src="/img/jpg5f02ab979521a.jpg" style="width: 1700px;height:10000 " />
+</section>
+
+<section class="section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-4 element-animate ">
+                <div class="media block-6 d-block text-center">
+                    <div class="icon mb-3"><span class="ion-bookmark text-primary"></span></div>
+
+                    <div class="media-body">
+                        <h3  class="heading">@ViewBag.SoLuongSach Sản phẩm</h3>
+                        <p>Sách có thể ít đi một chút, nhưng phải tốt đẹp hơn. Không nên đặt một cuốn sách tầm thường lên giá sách.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-lg-4 element-animate ">
+                <div class="media block-6 d-block text-center">
+                    <div class="icon mb-3"><span class="ion-heart text-primary"></span></div>
+                    <div class="media-body">
+                        <h3 class="heading">@ViewBag.SoLuongDocGia Độc giả</h3>
+                        <p>Thư viện trường học là hữu ích cho tất cả mọi người cho dù học sinh, giáo viên hoặc bất kỳ nhân viên khác.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-lg-4 element-animate ">
+                <div class="media block-6 d-block text-center">
+                    <div class="icon mb-3"><span class="ion-leaf text-primary"></span></div>
+                    <div class="media-body">
+                        <h3 class="heading"> Chi nhánh </h3>
+                        <p>Nguồn tài liệu phong phú,lối kiến trúc độc đáo gợi cho người đọc cảm giác đi vào núi sách.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+

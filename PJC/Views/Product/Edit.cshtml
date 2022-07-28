@@ -1,0 +1,77 @@
+﻿@model ASS_QLTV_API.Models.Sach
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <h1 class="mt-4">Chỉnh sủa sách</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Chỉnh sửa người dùng</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <a class="btn btn-success" asp-action="Index" asp-controller="Product">Về danh sách</a>
+        </div>
+        <div class="card-body">
+            <div class="col-md-4">
+                <form asp-action="Edit" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ImageFile" class="control-label"></label>
+                        <input asp-for="ImageFile" type="file" accept="image/*" />
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MaSach" class="control-label"></label>
+                        <input asp-for="MaSach" class="form-control" readonly />
+                        <span asp-validation-for="MaSach" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TenSach" class="control-label"></label>
+                        <input asp-for="TenSach" class="form-control" />
+                        <span asp-validation-for="TenSach" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TenTg" class="control-label"></label>
+                        <input asp-for="TenTg" class="form-control" />
+                        <span asp-validation-for="TenTg" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NhaXb" class="control-label"></label>
+                        <input asp-for="NhaXb" class="form-control" />
+                        <span asp-validation-for="NhaXb" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TheLoai" class="control-label"></label>
+                        <input asp-for="TheLoai" class="form-control" />
+                        <span asp-validation-for="TheLoai" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SoLuong" class="control-label"></label>
+                        <input asp-for="SoLuong" class="form-control" />
+                        <span asp-validation-for="SoLuong" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GiaTien" class="control-label"></label>
+                        <input asp-for="GiaTien" class="form-control" />
+                        <span asp-validation-for="GiaTien" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MieuTa" class="control-label"></label>
+                        <input asp-for="MieuTa" class="form-control" />
+                        <span asp-validation-for="MieuTa" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

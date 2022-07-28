@@ -1,0 +1,84 @@
+﻿@using Newtonsoft.Json
+@using ASS_QLTV_API.Models
+@using ASS_QLTV_API.Services
+@model ASS_QLTV_API.Models.Ctpm
+
+@{
+    ViewData["Title"] = "EditTraSach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var data = JsonConvert.DeserializeObject<List<Phieumuon>>(new APIServices().GetDataFromAPI("https://localhost:44301/", "api/Phieumuons"));
+    var x = data.FirstOrDefault(p => p.MaPm == Model.MaPm);
+}
+    <div class="container-fluid">
+        <h1 class="mt-4">Trả Sách</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+            <li class="breadcrumb-item active">Trả sách</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <a class="btn btn-success" asp-action="Index" asp-controller="PhieuTra">Về danh sách</a>
+            </div>
+            <div class="card-body">
+                <div class="col-md-4">
+                    <form asp-action="EditTraSach">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group" hidden="">
+                            <label asp-for="MaCtpm" class="control-label"></label>
+                            <input asp-for="MaCtpm" class="form-control"readonly />
+                            <span asp-validation-for="MaCtpm" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MaPm" class="control-label"></label>
+                            <input asp-for="MaPm" class="form-control"readonly />
+                            <span asp-validation-for="MaPm" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">MaDG</label>
+                            <input type="text" class="form-control" value="@x.MaDg" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MaSach" class="control-label"></label>
+                            <input asp-for="MaSach" class="form-control"readonly />
+                            <span asp-validation-for="MaSach" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">NgayHenTra</label>
+                            <input type="datetime" class="form-control" value="@x.NgayHenTra" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NgayTra" class="control-label"></label>
+                            <input asp-for="NgayTra" class="form-control" />
+                            <span asp-validation-for="NgayTra" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="TinhTrangSach" class="control-label"></label>
+                            <input asp-for="TinhTrangSach" class="form-control" readonly=""/>
+                            <span asp-validation-for="TinhTrangSach" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="TinhTrangTra" class="control-label"></label>
+                            <input asp-for="TinhTrangTra" class="form-control" />
+                            <span asp-validation-for="TinhTrangTra" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="User" class="control-label"></label>
+                            <input asp-for="User" class="form-control" value="@ViewBag.user" readonly/>
+                            <span asp-validation-for="User" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="GhiChu" class="control-label"></label>
+                            <input asp-for="GhiChu" class="form-control" />
+                            <span asp-validation-for="GhiChu" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Trả sách" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+

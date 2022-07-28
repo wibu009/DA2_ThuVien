@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ASS_QLTV_API.Models.Taikhoan>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script>
+        setTimeout(function () {
+            $('#msgAlert').fadeOut('slow');
+        }, 2000);
+    </script>
+}
+<div class="container-fluid">
+    <h1 class="mt-4">Danh sách người dùng</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Danh sách phiếu mượn</li>
+    </ol>
+    <div class="card mb-12">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <a class="btn btn-success" href="/User/Create">Tạo mới</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                @if (ViewBag.SuccessMsg != null)
+                {
+                    <div id="msgAlert" class="alert alert-success" role="alert">
+                        @ViewBag.SuccessMsg
+                    </div>}
+            </div>
+            <div class="card mb-4">
+                <div class="card-header"><i class="fas fa-table mr-1"></i>Người dùng</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Password)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.PhanQuyen)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TenNd)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Sdt)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Cmnd)
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.User)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Password)
+                                    </td>
+                                    <td>
+                                        @(item.PhanQuyen == 1? "Admin" : "Thủ thư") 
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TenNd)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Sdt)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cmnd)
+                                    </td>
+                                    <td>
+                                        <form action="~/User/Edit" method="get">
+                                            <input type="hidden" value="@item.User" name="id" />
+                                            <input type="submit" value="Sửa" class="btn btn-outline-success" />
+                                        </form>
+
+                                    </td>                                 
+                                    <td>
+                                        <form action="~/User/Delete" method="get">
+                                            <input type="hidden" value="@item.User" name="id" />
+                                            <input type="submit" value="Xóa" class="btn btn-outline-danger" />
+                                        </form>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+

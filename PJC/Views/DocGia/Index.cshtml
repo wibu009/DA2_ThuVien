@@ -1,0 +1,120 @@
+﻿@model IEnumerable<ASS_QLTV_API.Models.Docgium>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}   
+@section Scripts{
+    <script>
+        setTimeout(function () {
+            $('#msgAlert').fadeOut('slow');
+        }, 2000);</script>
+}
+<div class="container-fluid">
+    <h1 class="mt-4">Danh sách độc giả</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Danh sách độc giả</li>
+    </ol>
+    <div class="card mb-12">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <a class="btn btn-success" href="/DocGia/Create">Tạo mới</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                @if (ViewBag.SuccessMsg != null)
+                {
+                    <div id="msgAlert" class="alert alert-success" role="alert">
+                        @ViewBag.SuccessMsg
+                    </div>}
+            </div>
+            <div class="card mb-4">
+                <div class="card-header"><i class="fas fa-table mr-1"></i>Độc giả</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MaDg)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TenDg)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Sdt)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DiaChi)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.GioiTinh)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MatSach)
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MaDg)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TenDg)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Sdt)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DiaChi)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.GioiTinh)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MatSach)
+                                        </td>
+                                        <td>
+                                            <form action="~/DocGia/Edit" method="get">
+                                                <input type="hidden" value="@item.MaDg" name="id" />
+
+                                                <input type="submit" value="Sửa" class="btn btn-outline-success" />
+                                            </form>
+
+                                        </td>
+                                        <td>
+                                            <form action="~/DocGia/Detail" method="get">
+                                                <input type="hidden" value="@item.MaDg" name="id" />
+
+                                                <input type="submit" value="Chi tiết" class="btn btn-outline-warning" />
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="~/DocGia/Delete" method="get">
+                                                <input type="hidden" value="@item.MaDg" name="id" />
+
+                                                <input type="submit" value="Xóa" class="btn btn-outline-danger" />
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+
+
+

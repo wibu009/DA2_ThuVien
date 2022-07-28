@@ -1,0 +1,115 @@
+﻿@model IEnumerable<ASS_QLTV_API.Models.Sach>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script>setTimeout(function () {
+            $('#msgAlert').fadeOut('slow');
+        }, 2000);</script>
+}
+<div class="container-fluid">
+    <h1 class="mt-4">Danh sách sản phẩm</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Danh sách sản phẩm</li>
+    </ol>
+    <div class="card mb-12">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <a class="btn btn-success" href="/Product/Create">Tạo mới</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                @if (ViewBag.SuccessMsg != null)
+                {
+                    <div id="msgAlert" class="alert alert-success" role="alert">
+                        @ViewBag.SuccessMsg
+                    </div>}
+            </div>
+            <div class="card mb-4">
+                <div class="card-header"><i class="fas fa-table mr-1"></i>Sách</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MaSach)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TenSach)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TenTg)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NhaXb)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TheLoai)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.SoLuong)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.GiaTien)
+                                    </th>
+                                    <th> @Html.DisplayNameFor(model => model.ImageUrl)</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaSach)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TenSach)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TenTg)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NhaXb)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TheLoai)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SoLuong)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GiaTien)
+                                    </td>
+                                    <td>
+                                        <img src="@item.ImageUrl"  style="width:100px;height:120px;" class="imageCell" />
+                                    </td>
+                                    <td>
+                                        <form action="~/Product/Edit" method="get">
+                                            <input type="hidden" value="@item.MaSach" name="id" />
+                                            <input type="submit" value="Sửa" class="btn btn-outline-warning" />
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="~/Product/Delete" method="get">
+                                            <input type="hidden" value="@item.MaSach" name="id" />
+                                            <input type="submit" value="Xóa" class="btn btn-outline-danger" />
+                                        </form>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+

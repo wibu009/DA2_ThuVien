@@ -1,0 +1,56 @@
+﻿@model PJC.Models.DoiMK
+@TempData["result"]
+@{
+    ViewData["Title"] = "DoiMK";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <h1 class="mt-4">Đổi mật khẩu</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Chỉnh sửa người dùng</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="col-md-4">
+                <form asp-action="DoiMK">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="User" class="control-label"></label>
+                        <input asp-for="User" class="form-control" value="@ViewBag.user" readonly />
+                        <span asp-validation-for="User" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PassWord" class="control-label"></label>
+                        <input asp-for="PassWord" class="form-control" type="password" />
+                        <span asp-validation-for="PassWord" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PassWordConfirm" class="control-label"></label>
+                        <input asp-for="PassWordConfirm" class="form-control" type="password" />
+                        <span asp-validation-for="PassWordConfirm" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Đổi mật khẩu" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+﻿@model ASS_QLTV_API.Models.Sach
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1 class="mt-4">Xóa sách</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/User/Home"">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Xóa sách</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <a class="btn btn-success" href="/User/Product/Index">Về danh sách</a>
+        </div>
+
+        <div>
+            <h4>Sách</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    Upload Image
+                </dt>
+                <dd class="col-sm-10">
+                    <img src="@("~" + Model.ImageUrl)" asp-append-version="true" width="auto" height="auto"/>
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.MaSach)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.MaSach)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.TenSach)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.TenSach)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.TenTg)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.TenTg)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.NhaXb)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.NhaXb)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.TheLoai)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.TheLoai)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.SoLuong)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.SoLuong)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.GiaTien)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.GiaTien)
+                </dd>
+            </dl>
+        </div>
+        <form action="~/User/Product/Delete" method="post">
+            <input asp-for="MaSach" type="hidden" />
+            <input type="submit" value="Xóa" class="btn btn-danger" />
+        </form>
+    </div>
+</div>
+

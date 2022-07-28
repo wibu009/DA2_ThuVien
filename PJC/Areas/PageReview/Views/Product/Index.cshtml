@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ASS_QLTV_API.Models.Sach>
+    @{
+        ViewData["Title"] = "Index";
+        Layout = "~/Areas/PageReview/Views/Shared/_LayoutReView.cshtml";
+    }
+    <style>
+        .hidden {
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+        }
+
+        .search-fa {
+            padding-top: 10px;
+        }
+    </style>
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row">
+                @*<div class="search-fa">
+                <p>Type:</p>
+            </div>
+            <div class="col-md-2">
+                <select class="form-control" id="selectType" value="">
+                    <option>All</option>
+                    <option>Book</option>
+                    <option>Video</option>
+                </select>
+            </div>*@
+
+                <div class="search-fa">
+                    <p>Tìm Kiếm:</p>
+                </div>
+                <div class="col-md-6">
+                    <form action="~/PageReview/Product/Index" method="post">
+                        <input class="form-control" type="text" name="searchString" placeholder="Nhập tên sách, thể loại, tác giả..." />
+                    </form>
+                </div>
+
+            </div>
+            <div class="row">
+                <br />
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <div class="row list ">
+                                @foreach (var item in Model)
+                                {
+
+                                    <div class="col-md-6 col-lg-4 @item.TheLoai  item All">
+                                        <div class="media block-6 d-block">
+                                            <div class="media-body ">
+                                                <a href="~/PageReview/Product/Detail/@item.MaSach">
+                                                    <img src="@item.ImageUrl" class="imageCell" style="width: 200px; height:300px" />
+                                                </a>
+                                                <h3 class="heading">@item.TenSach</h3>
+                                                <p><strong>Số lượng: </strong>@item.SoLuong</p>
+
+                                            </div>
+                                        </div>
+                                    </div>}
+                            </div>
+
+</section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $('#selectType').on('change', function () {
+            var type = $('#selectType').val();
+            console.log(type);
+            $('.list .item').each(function () {
+                if ($(this).hasClass(type)) {
+                    $(this).removeClass('hidden');
+                    $(this).addClass('zoomIn animated');
+                }
+                else {
+                    $(this).addClass('hidden');
+                    $(this).removeClass('zoomIn animated');
+                }
+            });
+        });</script>

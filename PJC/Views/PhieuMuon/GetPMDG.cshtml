@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ASS_QLTV_API.Models.Phieumuon>
+
+@{
+    ViewData["Title"] = "GetPMDG";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Phiếu mượn của độc giả @ViewBag.madg</h1>
+
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Phiếu mượn</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MaPm)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MaDg)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NgayMuon)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NgayHenTra)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SoLuongMuon)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaPm)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaDg)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NgayMuon)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NgayHenTra)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SoLuongMuon)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User)
+                            </td>
+                            <td>
+                                <form action="~/PhieuTra/CTPM" method="get">
+                                    <input type="hidden" value="@item.MaPm" name="id" />
+
+                                    <input type="submit" value="Chi tiết" class="btn btn-outline-success" />
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>

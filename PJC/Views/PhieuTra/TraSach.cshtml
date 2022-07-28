@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ASS_QLTV_API.Models.Ctpm>
+
+@{
+    ViewData["Title"] = "TraSach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script>
+        setTimeout(function () {
+            $('#msgAlert').fadeOut('slow');
+        }, 2000);</script>
+}
+<div class="container-fluid">
+    <h1 class="mt-4">Danh Sách Phiếu Chưa Trả</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Danh sách phhiếu chưa trả</li>
+    </ol>
+    <div class="card-body">
+        <div class="row">
+            @if (ViewBag.SuccessMsg != null)
+            {
+                <div id="msgAlert" class="alert alert-success" role="alert">
+                    @ViewBag.SuccessMsg
+                </div>}
+        </div>
+        <div class="card mb-4">
+            <div class="card-header"><i class="fas fa-table mr-1"></i>Phiếu chưa trả</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MaPm)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MaSach)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NgayTra)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TinhTrangSach)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TinhTrangTra)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.User)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GhiChu)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TienPhat)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaPm)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaSach)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgayTra)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TinhTrangSach)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TinhTrangTra)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GhiChu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TienPhat)
+                                </td>
+                                <td>
+                                    <form action="~/PhieuTra/EditTraSach" method="get">
+                                        <input type="hidden" value="@item.MaCtpm" name="id" />
+                                        <input type="submit" value="Trả sách" class="btn btn-outline-success" />
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="~/PhieuTra/Edit" method="get">
+                                        <input type="hidden" value="@item.MaCtpm" name="id" />
+                                        <input type="submit" value="Sửa" class="btn btn-outline-warning" />
+                                    </form>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>

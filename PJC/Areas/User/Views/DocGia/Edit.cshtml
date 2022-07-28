@@ -1,0 +1,70 @@
+﻿@model ASS_QLTV_API.Models.Docgium
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <h1 class="mt-4">Chỉnh sửa độc giả</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/User/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Chỉnh sửa người dùng</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <a class="btn btn-success" href="/User/DocGia/Index">Về danh sách</a>
+        </div>
+        <div class="card-body">
+            <div class="col-md-4">
+                <form action="~/User/Product/Edit" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="MaDg" class="control-label"></label>
+                        <input asp-for="MaDg" class="form-control" />
+                        <span asp-validation-for="MaDg" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TenDg" class="control-label"></label>
+                        <input asp-for="TenDg" class="form-control" />
+                        <span asp-validation-for="TenDg" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Sdt" class="control-label"></label>
+                        <input asp-for="Sdt" class="form-control" />
+                        <span asp-validation-for="Sdt" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DiaChi" class="control-label"></label>
+                        <input asp-for="DiaChi" class="form-control" />
+                        <span asp-validation-for="DiaChi" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GioiTinh" class="control-label"></label>
+                        <input asp-for="GioiTinh" class="form-control" />
+                        <span asp-validation-for="GioiTinh" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MatSach" class="control-label"></label>
+                        <input asp-for="MatSach" class="form-control" />
+                        <span asp-validation-for="MatSach" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

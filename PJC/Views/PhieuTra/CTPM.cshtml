@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ASS_QLTV_API.Models.Ctpm>
+
+@{
+    ViewData["Title"] = "CTPM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewBag.mapm </h1>
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Phiếu mượn</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MaPm)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MaSach)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NgayTra)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TinhTrangSach)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TinhTrangTra)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GhiChu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TienPhat)
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaPm)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaSach)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NgayTra)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TinhTrangSach)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TinhTrangTra)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GhiChu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TienPhat)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>

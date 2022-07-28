@@ -1,0 +1,73 @@
+﻿@model ASS_QLTV_API.Models.Ctpm
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1 class="mt-4">Chi tiết</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Chi tiết</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <a class="btn btn-success" asp-action="Index" asp-controller="PhieuTra">Về danh sách</a>
+        </div>
+        <div>
+            <h4>CTPM</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.MaPm)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.MaPm)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.MaSach)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.MaSach)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.NgayTra)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.NgayTra)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.TinhTrangSach)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.TinhTrangSach)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.TinhTrangTra)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.TinhTrangTra)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.User)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.User)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.GhiChu)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.GhiChu)
+                </dd>
+            </dl>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+

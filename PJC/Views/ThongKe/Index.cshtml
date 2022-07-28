@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1 class="mt-4">Thống Kê</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Thống kê</li>
+    </ol>
+    <div class="row mtbox">
+        <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+            <div class="box1">
+                <a href="/ThongKe/Index1">
+                    <img src="https://img.icons8.com/carbon-copy/64/000000/book.png" />
+                </a> 
+                <h3></h3>
+            </div>
+            <p>Có @ViewBag.SoLuongSach đầu sách!</p>
+        </div>
+
+        <div class="col-md-2 col-sm-2 box0">
+            <div class="box1">
+                <a  href="/ThongKe/Index2">
+                    <img src="https://img.icons8.com/dusk/64/000000/reading.png" />
+                </a>                
+                <h3></h3>
+            </div>
+            <p>Có @ViewBag.SoLuongDocGia độc giả!</p>
+        </div>
+        <div class="col-md-2 col-sm-2 box0">
+            <div class="box1">
+                <a  href="/ThongKe/Index3">
+                    <img src="https://img.icons8.com/dusk/64/000000/borrow-book.png" />
+                </a>                
+                <h3</h3>
+            </div>
+            <p>Có @ViewBag.SoLuongPhieuMuon phiếu mượn!</p>
+        </div>
+        <div class="col-md-2 col-sm-2 box0">
+            <div class="box1">
+                <a  href="/ThongKe/Index4">
+                    <img src="https://img.icons8.com/dusk/64/000000/return-book.png" />
+                </a>
+               
+                <h3</h3>
+            </div>
+            <p>Có @ViewBag.SoLuongPhieuTra phiếu trả!</p>
+        </div>
+        <div class="col-md-2 col-sm-2 box0">
+            <div class="box1">
+                <a  href="/ThongKe/Index5">
+                    <img src="https://img.icons8.com/wired/64/000000/return-book.png" />
+                </a>              
+                <h3</h3>
+            </div>
+            <p>Có @ViewBag.SoLuongPhieuChuaTra phiếu chưa trả!</p>
+        </div>
+        <div class="col-md-2 col-sm-2 box0">
+            <div class="box1">
+                <a  href="/ThongKe/Index6">
+                    <img src="https://img.icons8.com/wired/64/000000/return-book.png" />
+                </a>             
+                <h3</h3>
+            </div>
+            <p>Doanh thu tiền phạt($):@ViewBag.DoanhThu</p>
+        </div>
+    </div>

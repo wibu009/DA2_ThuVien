@@ -1,0 +1,134 @@
+﻿@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thư Viện</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/Review/animate.css">
+    <link rel="stylesheet" href="~/css/Review/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/Review/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="~/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/fontawesome/css/font-awesome.min.css">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="~/css/Review/style.css">
+
+
+</head>
+
+<body>
+  
+    <header role="banner" style="background-color: dodgerblue; ">  
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand " href="~/PageReview/Home/Index">LIBRARY</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <ul class="navbar-nav pl-md-5 ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " href="~/PageReview/Home/Index">Trang chủ</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/PageReview/Product/Index">Sản phẩm</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="#about">Thông tin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Liên hệ</a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="top-shadow"></div>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        
+
+        <div  class="page-content">
+
+            @RenderBody()
+
+            <footer class="site-footer" role="contentinfo">
+                <div class="container">
+                    <div style="font-family: Arial" class="row mb-5" id="about">
+                        <div class="col-md-4 mb-5">
+                            <h3 style="font-family: Arial">Thông tin đồ án</h3>
+                            <p class="mb-2">Ngành: Phát triển phần mềm</p>
+                            <p class="mb-2">Tên dự án : Quản lý thư viện</p>
+                            <p class="mb-2">GV: Phạm Gia Khánh</p>
+                            <ul class="list-unstyled footer-link d-flex footer-social">
+                                <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+                                <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+                                <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+                            </ul>
+
+                        </div>
+                        <div style="font-family: Arial" class="col-md-5 mb-5 pl-md-5" id="contact">
+                            <h3 style="font-family: Arial">Thông tin liên hệ</h3>
+                            <ul class="list-unstyled footer-link">
+                                <li class="d-block">
+                                    <span class="d-block">Địa chỉ:</span>
+                                    <span>Mỹ Đình 2, Nam Từ Liêm, Hà Nội</span>
+                                </li>
+                                <li class="d-block"><span class="d-block">Số điện thoại:</span><span>0852670095</span></li>
+                                <li class="d-block"><span class="d-block">Email:</span><span>kienctph17436@fpt.edu.vn</span></li>
+                            </ul>
+                        </div>
+
+                        <div style="font-family: Arial" class="col-md-3" >
+                            <h3 style="font-family: Arial"> Thành viên </h3>
+                            <ul class="list-unstyled footer-link">
+                                <li class="d-block">Cao Trung Kiên </li>
+                            </ul>
+                            <ul class="list-unstyled footer-link d-flex footer-social">
+                                <li><a href="#" class="p-2"><span class="fa fa-facebook"> K</span></a></li>
+                            </ul>
+                        </div>
+                    
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-md-center text-left">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright by BCL ||
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214" /></svg></div>
+
+    <script src="~/js/Review/jquery-3.2.1.min.js"></script>
+    <script src="~/js/Review/popper.min.js"></script>
+    <script src="~/js/Review/bootstrap.min.js"></script>
+    <script src="~/js/Review/owl.carousel.min.js"></script>
+    <script src="~/js/Review/jquery.waypoints.min.js"></script>
+    <script src="~/js/Review/jquery.fancybox.min.js"></script>
+    <script src="~/js/Review/main.js"></script>
+
+    <script src="~/js/Review/main.js"></script>
+</body>
+</html>
